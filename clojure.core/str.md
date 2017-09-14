@@ -1,0 +1,13 @@
+Stringifies and concatenates all the given parameters.
+
+Behavior notes
+==============
+```
+(str) => ""
+(str nil) => ""
+```
+
+Working with Java objects
+=========================
+When working with a Java objects, `str` calls the .toString() method to get
+the string representation of the object.

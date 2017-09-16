@@ -1,3 +1,5 @@
+:source-language: clojure
+
 Adds all supplied parameters together
 
 Note that adding numbers together may result in integer overflow. In this case,
@@ -6,26 +8,29 @@ number to an appropriate type to represent the number.
 
 
 Dealing with overflows
-======================
+----------------------
 
 On overflow, a `java.lang.ArithmeticException` will be thrown.
 
-```Clojure
+[source]
+----
 (+ Long/MAX_VALUE 1)
 ;; => java.lang.ArithmeticException: integer overflow
-```
+----
+
 
 This behavior can be disabled via `*unchecked-math*`.
 
-```Clojure
+[source]
+----
 (set! *unchecked-math* true)
 (+ Long/MAX_VALUE 1)
 ;; => -9223372036854775808
-```
+----
 
 Alternatively, use `unchecked-add`.
 
 
 Doc group
-=========
-[Numbers Arithmetic]
+---------
+[Numbers Arithmetic](PREPROCESS)

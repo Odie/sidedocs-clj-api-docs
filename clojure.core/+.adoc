@@ -2,13 +2,13 @@
 
 Adds all supplied parameters together
 
-Note that adding numbers together may result in integer overflow. In this case,
+== Description
+Adding numbers together may result in integer overflow. In this case,
 you may want to use the `+'` function, which will automatically promote the
 number to an appropriate type to represent the number.
 
 
-Dealing with overflows
-----------------------
+=== Dealing with overflows
 
 On overflow, a `java.lang.ArithmeticException` will be thrown.
 
@@ -29,8 +29,3 @@ This behavior can be disabled via `*unchecked-math*`.
 ----
 
 Alternatively, use `unchecked-add`.
-
-
-Doc group
----------
-[Numbers Arithmetic](PREPROCESS)

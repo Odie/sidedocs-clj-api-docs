@@ -1,18 +1,21 @@
 Returns the namespace named by `sym`
 
-Parameters
-==========
+== Parameters
 sym: symbol of the namespace to retrieve
 
-Return value
-============
+
+== Return value
 namespace or nil
 
-Exceptions
-==========
+
+== Exceptions
 - `java.lang.ClassCastException`: when the given parameter is not one of the expected types
 - `java.lang.NullPointerException`: when the given parameter is nil
 
-Related functions
-=================
+
+== Related functions
 `clojure.core/the-ns`
+
+
+== Further reading
+https://clojure.org/reference/namespaces

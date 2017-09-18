@@ -1,27 +1,26 @@
 Returns a map of the [intern mappings](EXPLAINME) for the namespace.
 
-Note
-====
+NOTE: ns-map = ns-refers + ns-interns + ns-imports
 
-The returned value is a subset of the mapping returned by `clojure.core/ns-map`, where
-ns-map = ns-refers + ns-interns + ns-imports
-
-Parameters
-==========
+== Parameters
 ns: symbol or namespace (`clojure.lang.Namespace`)
 
-Return value
-============
+
+== Return value
 namespace or nil
 
-Exceptions
-==========
+
+== Exceptions
 - `java.lang.ClassCastException`: when the given parameter is not one of the expected types
 - `java.lang.Exception`: when the given symbol does not refer to a known namespace
 - `java.lang.NullPointerException`: when the given parameter is nil
 
-Related functions
-=================
+
+== Related functions
 `clojure.core/ns-publics`
 `clojure.core/ns-map`
 `clojure.core/intern`
+
+
+== Further reading
+https://clojure.org/reference/namespaces

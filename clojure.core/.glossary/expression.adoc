@@ -1,0 +1,6 @@
+= Expression
+
+Clojure programs are composed of expressions. Every form not handled specially
+by a special form or macro is considered by the compiler to be an expression,
+which is evaluated to yield a value.
+(Taken from https://clojure.org/reference/evaluation)

@@ -1,0 +1,4 @@
+= Sequence
+
+A sequence is a logical list. All clojure collections (list, vector, hash-map,
+set, struct) can be coerced into a sequence.

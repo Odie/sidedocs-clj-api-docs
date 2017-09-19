@@ -1,0 +1,55 @@
+:source-lang: clojure
+Returns the first item in the given collection.
+
+== Parameters
+coll: any clojure collection
+
+
+== Return value
+a value/object
+
+or
+
+nil::
+* when the collection is nil or empty
+* when the first item itself is nil
+
+
+== Examples
+
+(first [1 2 3])
+;; => 1
+
+(first [{:a :map} {:another :map}])
+;; => {:a :map}
+
+
+== Description
+
+Some collections, such as hashmap and set, do not keep a strict order for the
+values it holds. In such cases, `first` has no semantic meaning, but it will
+retrieve *a* value stored in the collection.
+
+[WARNING]
+----
+`first` will appear to work on small hashmaps while "breaking" on larger hashmaps.
+
+On the JVM, small hashmaps (<= 8 elements) are implemented with the java class
+`clojure.lang.PersistentArrayMap`, which holds the hashmap entries in an array.
+Calling `first` on such hashmaps may appear to give the desired result. However,
+as soon as the hashmap grows beyond 8 elements, JVM clojure will convert the
+collection to a `clojure.lang.PersistentHashMap` and "break" the behavior.
+----
+
+=== Working with Java
+Any Java object that implements ISeq can be used with `first`.
+
+
+== Exceptions
+java.lang.IllegalArgumentException: When `coll` isn't a collection
+
+
+== See Also
+
+
+== Further Reading

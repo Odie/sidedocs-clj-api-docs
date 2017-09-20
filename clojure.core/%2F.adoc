@@ -1,0 +1,25 @@
+:doc-for: clojure.core//
+:source-language: clojure
+
+Multiplies of all supplied parameters.
+
+result = `x` / `y` / `param3` / `param4` / ...
+
+== Description
+`/` may result in various non-numeric values such as `Infinity`.
+
+Unfortunately, there doesn't appear to be an infinity check function in the core
+library. It is possible to check for this using Java interop, however.
+
+
+[source]
+----
+(/ Double/MAX_VALUE Double/MIN_VALUE)
+;; => Infinity
+
+(Double/isInfinite (/ Double/MAX_VALUE Double/MIN_VALUE))
+;; => true
+
+(= Double/POSITIVE_INFINITY (/ Double/MAX_VALUE Double/MIN_VALUE))
+;; => true
+----

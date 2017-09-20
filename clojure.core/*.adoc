@@ -1,21 +1,22 @@
 :source-language: clojure
 
-Adds all supplied parameters together.
+Multiplies all supplied parameters.
 
-result = `x` + `y` + `param3` + `param4` + ...
+result = `x` * `y` * `param3` * `param4` * ...
 
 == Description
-`+` may result in integer overflow. In this case, you may want to use the `+'`
+`*` may result in integer overflow. In this case, you may want to use the `*'`
 function, which will automatically promote the number to an appropriate type to
 represent the number.
 
 
 === Dealing with overflows
+
 On overflow, a `java.lang.ArithmeticException` will be thrown.
 
 [source]
 ----
-(+ Long/MAX_VALUE 1)
+(* Long/MAX_VALUE 2)
 ;; => java.lang.ArithmeticException: integer overflow
 ----
 
@@ -25,13 +26,12 @@ This behavior can be disabled via `*unchecked-math*`.
 [source]
 ----
 (set! *unchecked-math* true)
-(+ Long/MAX_VALUE 1)
-;; => -9223372036854775808
+(* Long/MAX_VALUE 2)
+;; => -2
 ----
 
-Alternatively, use `unchecked-add`.
-
+Alternatively, use `unchecked-multiply`.
 
 == See Also
-`clojure.core/+'`
-`clojure.core/unchecked-add`
+`clojure.core/*'`
+`clojure.core/unchecked-multiply`

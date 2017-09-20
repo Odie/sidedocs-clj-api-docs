@@ -1,4 +1,4 @@
-:source-lang: clojure
+:source-language: clojure
 Execute the `body` repeatedly with bindings defined by `seq-exprs`.
 
 

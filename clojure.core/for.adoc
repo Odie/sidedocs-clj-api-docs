@@ -1,4 +1,4 @@
-:source-lang: clojure
+:source-language: clojure
 
 List comprehension. Collect the results of `body-expr` into a sequence with
 bindings defined by `seq-exprs`.

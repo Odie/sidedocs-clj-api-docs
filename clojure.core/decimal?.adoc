@@ -1,0 +1,30 @@
+:source-language: clojure
+Returns true if n is a BigDecimal (`java.lang.BigDecimal`)
+
+== Parameters
+`n`: the object to check
+
+== Return value
+Returns true if n is a BigDecimal
+
+== Examples
+
+[source]
+----
+(decimal? (bigdec 3.14))
+;; => true
+
+(decimal? 3.14)
+;; => false
+----
+
+== Description
+
+
+== Exceptions
+
+
+== See Also
+
+
+== Further Reading

@@ -1,0 +1,33 @@
+:source-language: clojure
+Returns a map of import mappings for the namespace.
+
+== Parameters
+`ns`: symbol or namespace (`clojure.lang.Namespace`)
+
+
+== Return value
+A map in the shape of {symbol -> Java class}
+
+
+== Examples
+[source]
+----
+(ns-imports 'clojure.core)
+;;=> {Type clojure.asm.Type,
+;;    Enum java.lang.Enum,
+;;    RT clojure.lang.RT,
+;;    ...}
+----
+
+
+== Description
+
+
+== Exceptions
+
+
+== See Also
+
+
+== Further Reading
+https://clojure.org/reference/namespaces

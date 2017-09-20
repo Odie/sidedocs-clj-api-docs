@@ -1,0 +1,37 @@
+:source-language: clojure
+Returns a sequence of regex (`re`) all matches in string (`s`).
+
+TIP: Regex literal syntax looks like `#"regex-goes-here"`
+
+== Parameters
+`re`: regular expression to match
+`s`: string to be searched for matches in
+
+== Return value
+Sequence of matched items
+
+or
+
+nil when no matches are found
+
+== Examples
+[source]
+----
+(re-seq #"\d" "clojure 1.9.0")
+;;=> ("1" "9" "0")
+----
+
+== Description
+
+=== Working with Java
+
+In JVM Clojure, regex is "Java flavored" because it's implemented using
+`java.util.regex.Matcher.find()`. You may want to refer to
+https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html[Java
+docs] for a full list of the supported constructs.
+
+== Exceptions
+
+== See Also
+
+== Further Reading

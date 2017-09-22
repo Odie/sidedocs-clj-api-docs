@@ -1,0 +1,30 @@
+:source-lang: clojure
+Returns a memoized version of the given `f`.
+
+== Parameters
+`f`: the function the cache return values for
+
+
+== Return value
+a function with the signature `(fn [& args])`
+
+
+== Examples
+Short, idiomatic clojure example that shows the expected usage pattern.
+
+
+== Description
+
+`memoize` will return a function that wraps `f`. When the returned function is
+called, the arguments will be used to call `f` only if the same arguments have
+not been used before. Otherwise, it returns the cached result.
+
+This function is useful as a performance optimization when `f` is expensive
+to run or compute.
+
+WARNING: `memoize` does not provide any way to tune the caching policy. All
+values returned by `f` wil be cached and will take up memory until the memoized
+version of the function is garbage collected.
+
+`memoize` does not check if the given parameter `f` is actually a function. An
+exception will be thrown at runtime when the memoize wrapper function calls `f`.

@@ -1,0 +1,32 @@
+:source-lang: clojure
+Coerce the given number to an int, ignoring overflow errors.
+
+== Parameters
+`x`: any number
+
+
+== Return value
+32-bit signed int (`java.langInteger`)
+
+
+== Examples
+[source]
+----
+(int Double/MAX_VALUE)
+;; => java.lang.IllegalArgumentException: Value out of range for int: 1.7976931348623157E308
+
+(unchecked-int Double/MAX_VALUE)
+;; => 2147483647
+----
+
+
+== Description
+Any lengthy description of the function goes here.
+
+
+== Exceptions
+- `java.lang.ClassCastException`: when the given parameter is not a number
+
+
+== See Also
+`clojure.core/int`

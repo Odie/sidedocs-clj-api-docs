@@ -1,0 +1,41 @@
+:source-lang: clojure
+Forward declare a var.
+
+== Parameters
+`names`: any number of vars to be declared
+
+
+== Return value
+nil
+
+
+== Examples
+[source]
+----
+(declare say-hi) <1>
+
+(def greet
+  [name]
+  (say-hi)) <2>
+
+(def say-hi
+  []
+  (println "hi"))
+----
+<1> Forward declare `say-hi`
+<2> Reference `say-hi` before it is actually defined
+
+
+== Description
+
+Clojure performs compilation in a single pass. During compilation, if a
+referenced var has not been defined, the compiler will throw an exception:
+
+```
+clojure.lang.Compiler$CompilerException: java.lang.RuntimeException: Unable to resolve symbol
+```
+
+To resolve this, use `declare` to declare the var before it is referenced. A
+rationale of why this is done can be found here:
+https://stackoverflow.com/questions/33143936/clojure-why-a-function-should-be-declare-if-it-is-called-before-definition-in[stackoverflow
+link]

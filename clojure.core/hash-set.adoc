@@ -1,0 +1,27 @@
+:source-lang: clojure
+Returns a new hash set with supplied `keys`.
+
+== Parameters
+`keys`: the items that will go into the set
+
+
+== Return value
+a set
+
+
+== Examples
+[source]
+----
+(hash-set :a :b :c :d :e :f :g)
+;; => #{:e :g :c :b :d :f :a}
+----
+
+
+== Description
+A hash-set stores the items in no particular order. This means a specific
+ordering is not guaranteed during iteration. See `clojure.core/sorted-set` for a
+set that orders its elements.
+
+
+== See Also
+`clojure.core/sorted-set`

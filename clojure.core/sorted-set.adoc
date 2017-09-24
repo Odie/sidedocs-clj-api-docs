@@ -1,0 +1,40 @@
+:source-lang: clojure
+Returns a new sorted hash set with supplied `keys`.
+
+== Parameters
+`keys`: the items that will go into the set
+
+
+== Return value
+a set
+
+
+== Examples
+[source]
+----
+(sorted-set :b :a :d :c :e :g :f)
+;; => #{:a :b :c :d :e :f :g}
+----
+
+
+== Description
+
+Note that Clojure provides no way to compare items of different types or types
+that Clojure does not know how to compare.
+
+[source]
+----
+(hash-set "123" :123)
+;; => #{:123 "123"} <1>
+
+(sorted-set "123" :123)
+;; => java.lang.ClassCastException: java.lang.String cannot be cast to clojure.lang.Keyword <2>
+----
+<1> mixing items of different type in a hash-set is fine.
+<2> mixing items of different type in a sorted-hash-set throws an exception because it isn't able to compare values of different types to establish an ordering.
+
+To provide a custom comparator for the hash set, see `clojure.core/sorted-set-by`.
+
+
+== See Also
+`clojure.core/sorted-set-by`

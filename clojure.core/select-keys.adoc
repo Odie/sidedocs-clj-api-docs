@@ -1,0 +1,26 @@
+:source-lang: clojure
+Pick out `map` entries identified by `keyseq` and return it in a separate map
+
+== Parameters
+`map`: the hashmap to pick out entries from
+`keyseq`: the keys to pick out. This should be some kind of sequence(LINKME).
+
+
+== Return value
+a map
+
+
+== Examples
+[source]
+----
+(select-keys {:uid 1 :username "Joe" :email "joe@somewhere.com"} [:username :email])
+;; => {:username "Joe" :email "joe@somewhere.com"}
+----
+
+
+== Description
+Any lengthy description of the function goes here.
+
+
+== Exceptions
+- `java.lang.IllegalArgumentException`: if either `map` or `keyseq` are not the expected types

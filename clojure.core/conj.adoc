@@ -1,0 +1,84 @@
+:source-lang: clojure
+Adds items `x` into the collection `coll`.
+
+== Parameters
+`coll`: a collection
+`x`: the item to add to the collection
+`xs`: additional items to also add to the collection
+
+
+== Return value
+a collection with the same type as `coll`
+
+
+== Examples
+[source]
+----
+;; Add an item to a vector
+(conj [:a :b :c] :d)
+;; => [:a :b :c :d]
+----
+
+
+== Description
+
+The exact behavior of `conj` depends on the type of `coll` passed in, but it
+always preserve the semantic of "add item(s) a collection".
+
+
+=== Conj on a list
+Using conj on a list adds the item to the front of the list.
+
+[source]
+----
+(conj '(:a :b :c) :d)
+;; => (:d :a :b :c)
+----
+
+
+=== Conj on a vector
+Using conj on a list adds the item the back/end of the list.
+
+[source]
+----
+(conj [:a :b :c] :d)
+;; => [:a :b :c :d]
+----
+
+
+=== Conj on a hashmap
+Conj on a hashmap only works with vectors of 2 items.
+
+[source]
+----
+(conj {:a :v1 :b :v2} [:c :v3]) <1>
+;; => {:a :v1, :b :v2, :c :v3}
+
+
+(conj {:a :v1 :b :v2} :c) <2>
+;; => java.lang.IllegalArgumentException: Don't know how to create ISeq from: clojure.lang.Keyword
+----
+<1> adding to a hashmap requires some kind of key-value pair
+<2> adding single values does not make sense for a hashmap
+
+
+=== Conj on a set
+Conj on a set adds the element to the set. Note that if the set already contains
+the item, it will not be repeated/duplicated again.
+
+[source]
+----
+(conj #{:a :b} :c)
+;; => #{:c :b :a} <1>
+
+(conj #{:a :b :c} :c)
+;; => #{:c :b :a} <2>
+----
+<1> note that a set does not maintain a particular ordering of the items
+<2> adding a duplicate item to the set will not change the set
+
+
+== See Also
+
+
+== Further Reading

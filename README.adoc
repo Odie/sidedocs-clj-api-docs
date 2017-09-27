@@ -1,0 +1,56 @@
+= What is this?
+
+This repository holds alternative documentation (docstrings) for Clojure's core
+library.
+
+The docs are meant to be used in 2 ways:
+
+. Presented by IDE to inform the programmer what a function does
+. Exported to html for better presentation & searchability
+
+= How do I use it?
+
+See https://github.com/Odie/sidedocs-nrepl[sidedocs-nrepl].
+It can be used inject these alternative docstrings into cider docstring requests.
+
+= Documentation format
+As much as it makes sense, the documentation tries to stick to the following format:
+
+[source]
+----
+Short 1 line summary of what a function does with as few jargons as possible.
+
+Important supplementary info goes here. Longer treatments on what the function
+does should go in the `Description` section. The 1 line summary, `Parameters`,
+and `Return values` sections should be kept close together visually and towards
+the top.
+
+
+== Parameters
+list of parameters and their expected types
+
+
+== Return value
+list of return values and their expected types
+
+
+== Examples
+Short, idiomatic clojure example that shows the expected usage pattern.
+
+
+== Description
+Any lengthy description of the function goes here.
+
+
+== Exceptions
+List of possible exceptions that might be thrown and when they will be thrown.
+
+
+== See Also
+Links to related functions.
+We might want to add some additional preprocessing to automatically create links here.
+
+
+== Further Reading
+Links to other official & unofficial documentation
+----

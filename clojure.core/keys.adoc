@@ -1,0 +1,40 @@
+:source-lang: clojure
+Returns a sequence of all keys in `map`.
+
+== Parameters
+`map`: a hash-map
+
+
+== Return value
+Sequence of all keys of `map`
+
+
+== Examples
+[source]
+----
+(keys {:a 1 :b 2})
+;; => (:a :b)
+
+
+;; Keys are not guaranteed to be a particular order
+
+(keys {:a 1 :b 2 :c 3 :d 4 :e 5 :f 6 :g 7 :h 8 :i 9})
+;; => (:e :g :c :h :b :d :f :i :a)
+----
+
+
+== Description
+`keys` does simply retrieves the keys as stored by the underlying
+implementation. This means that for a hash-map, which does not maintain a
+particular order for the keys, `keys` will appear to return the keys in no
+particular order.
+
+
+== Exceptions
+- `java.lang.ClassCastException`: when the given `map` is not a type of hash-map
+
+
+== See Also
+`clojure.core/key`
+`clojure.core/val`
+`clojure.core/vals`

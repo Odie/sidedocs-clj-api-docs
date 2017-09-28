@@ -1,0 +1,27 @@
+:source-lang: clojure
+Return the key in the given map entry `e`.
+
+== Parameters
+`e`: a map entry (`java.util.Map$Entry`)
+
+
+== Return value
+Any object stored in the key field
+
+
+== Examples
+[source]
+----
+(key (first {:a 1 :b 2}))
+;; => :a
+----
+
+
+== Exceptions
+- `java.lang.ClassCastException`: given `e` is not an instance of java.util.Map$Entry
+
+
+== See Also
+`clojure.core/val`
+`clojure.core/vals`
+`clojure.core/keys`

@@ -1,0 +1,27 @@
+:source-lang: clojure
+Returns a sequence of all values in `map`.
+
+== Parameters
+`map`: a hash-map
+
+
+== Return value
+Sequence of all values of `map`
+
+
+== Examples
+[source]
+----
+(vals {:a 1 :b 2})
+;; => (1 2)
+----
+
+
+== Exceptions
+- `java.lang.ClassCastException`: when the given `map` is not a type of hash-map
+
+
+== See Also
+`clojure.core/key`
+`clojure.core/keys`
+`clojure.core/val`

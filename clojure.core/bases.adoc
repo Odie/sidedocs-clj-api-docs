@@ -1,0 +1,25 @@
+:source-lang: clojure
+Returns the parent class and all implemented interfaces of the given class `c`.
+
+== Parameters
+`c`: the class (`java.lang.Class`) to return the bases for
+
+
+== Return value
+Sequence of java.lang.Class objects
+
+or
+
+nil, if the given `c` has no bases
+
+
+== Examples
+[source]
+----
+(bases (type {}))
+;; => (clojure.lang.APersistentMap
+;;     clojure.lang.IObj
+;;     clojure.lang.IEditableCollection
+;;     clojure.lang.IMapIterable
+;;     clojure.lang.IKVReduce)
+----

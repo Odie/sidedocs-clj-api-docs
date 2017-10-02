@@ -1,0 +1,50 @@
+:source-lang: clojure
+
+Ignores `body` and evaluates to nil.
+
+NOTE: `body` still needs to be valid form, otherwise an exception will be thrown.
+
+== Parameters
+`body`: any valid clojure form(s)
+
+
+== Return value
+nil
+
+
+== Examples
+[source]
+----
+(comment
+  (some-form-goes-here)
+  (more-stuff-goes-here))
+;; => nil
+----
+
+
+== Description
+`comment` is a macro that can be used to comment out large regions of code. It
+can be used, for example, to keep a list of expressions you want to run
+repeatedly in the repl as you develop a function or program.
+
+Note that even though it is a "comment", the clojure reader still needs to
+process all the contents held in the `body` to determine *where* the comment
+ends. Therefore, it is still possible to get the reader to throw an exception
+while processing a comment.
+
+Alternatively, use the reader macro "#_".
+[source]
+----
+#_( (some-form-goes-here)
+    (more-stuff-goes-here))
+
+;; => form skipped, no evaluation happens
+----
+
+
+== Exceptions
+`java.lang.RuntimeException`: when the reader encounters problems parsing `body`
+
+
+== Further Reading
+https://clojure.org/reference/reader

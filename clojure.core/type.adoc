@@ -1,0 +1,18 @@
+:source-lang: clojure
+
+Returns the :type metadata of `x`, or its java Class if none
+
+== Parameters
+`x`: any object
+
+
+== Return value
+any object or a java.lang.Class object
+
+
+== Examples
+[source]
+----
+(type :a)
+;; => clojure.lang.Keyword
+----

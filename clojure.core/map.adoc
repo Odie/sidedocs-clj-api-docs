@@ -1,0 +1,44 @@
+:source-lang: clojure
+
+Returns the result of applying `f` to each element of `coll` as a lazy sequence.
+
+== Parameters
+`f`: a function that accepts the same number of parameters as the number of given collections
+`coll`: collection to map over
+
+
+== Return value
+lazy sequence
+
+
+== Examples
+[source]
+----
+(map inc [1 2 3])
+;; => [2 3 4]
+----
+
+
+== Description
+
+Immutable data structures is the default in Clojure. It is typical to think of
+it as transforming data from one collection into another. `map` does exactly
+this by applying a function to each of the items in the collection, then return
+the result in separate collection.
+
+When `map` is called without supplying a collection, a
+https://clojure.org/reference/transducers[transducer] is returned. (EXPLAINME)
+
+Note that the function returns a lazy sequence instead of the type of collection
+that was passed to it. You may want to use `clojure.core/into` and
+`clojure.core/empty` to place the items back into a collection of a particular
+type.
+
+
+== See Also
+`clojure.core/reduce`
+`clojure.core/filter`
+
+
+== Further Reading
+https://clojure.org/reference/transducers

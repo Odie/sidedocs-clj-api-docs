@@ -1,0 +1,43 @@
+:source-lang: clojure
+
+Gets rid of all items in `coll` where `(pred item)` answers false.
+
+== Parameters
+`pred`: a (predicate) function with the signature `obj -> boolean`
+`coll`: the collection to filter
+
+
+== Return value
+lazy sequence
+
+
+== Examples
+[source]
+----
+(filter even? (range 10))
+;; => (0 2 4 6 8)
+----
+
+
+== Description
+
+Immutable data structures is the default in Clojure. It is typical to think of
+it as transforming data from one collection into another. `filter` kicks out
+all items that does not satisfy the `pred` predicate function.
+
+When `filter` is called without supplying a collection, a
+https://clojure.org/reference/transducers[transducer] is returned. (EXPLAINME)
+
+Note that the function returns a lazy sequence instead of the type of collection
+that was passed to it. You may want to use `clojure.core/into` and
+`clojure.core/empty` to place the items back into a collection of a particular
+type.
+
+
+== See Also
+`clojure.core/map`
+`clojure.core/reduce`
+
+
+== Further Reading
+https://clojure.org/reference/transducers

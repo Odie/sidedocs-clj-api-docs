@@ -1,0 +1,85 @@
+:source-lang: clojure
+
+Passes every item in `coll` to `f`, one at a time, and returns a single value.
+
+== Parameters
+`f`: a function with the signature `val, item -> val`
+`val`: (optional) initial value to start the reduce with
+`coll`: the collection to reduce
+
+
+== Return value
+any object
+
+
+== Examples
+[source]
+----
+(reduce + [1 2 3])
+;; => 6
+----
+
+
+== Description
+
+=== Basic intuition
+The basic idea is to iterate through the `coll`, run each item through `f`, and
+build up some kind of value. Although this sounds a little vague, this is
+actually what a for loop is typically used for in imperative languages.
+
+For example:
+[source]
+----
+(reduce + 0 [1 2 3])
+;; => 6
+----
+
+
+is roughly performing the following:
+[source,python]
+----
+result = 0
+for i in [1, 2, 3]:
+  result += i
+# result => 6
+----
+
+
+We can split out the logic inside the for-loop, and rewrite the loop like:
+[source,python]
+----
+def add(some_result, item):
+  return some_result + item
+
+result = 0
+for i in [1, 2, 3]:
+  result = add(some_result, item)
+# result => 6
+----
+
+
+We can take the for-loop and turn it into a re-usable function, "reduce":
+[source,python]
+----
+def add(some_result, item):
+  return some_result + item
+
+def reduce(f, starting_val, coll):
+  result = starting_val
+  for i in coll:
+    result = f(result, i)
+  return result
+
+reduce(add, 0, [1, 2, 3])
+# => 6
+----
+
+
+
+== See Also
+`clojure.core/map`
+`clojure.core/filter`
+
+
+== Further Reading
+https://clojure.org/reference/transducers

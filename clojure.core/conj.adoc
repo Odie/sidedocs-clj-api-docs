@@ -2,8 +2,8 @@
 Adds items `x` into the collection `coll`.
 
 == Parameters
-`coll`: a collection
-`x`: the item to add to the collection
+`coll`: a collection                                      +
+`x`: the item to add to the collection                    +
 `xs`: additional items to also add to the collection
 
 

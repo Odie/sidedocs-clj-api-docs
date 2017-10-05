@@ -1,7 +1,7 @@
 Returns the namespace named by `sym`
 
 == Parameters
-sym: symbol of the namespace to retrieve
+`sym`: symbol of the namespace to retrieve
 
 
 == Return value

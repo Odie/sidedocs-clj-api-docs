@@ -3,7 +3,7 @@ Returns a map of the [intern mappings](EXPLAINME) for the namespace.
 NOTE: ns-map = ns-refers + ns-interns + ns-imports
 
 == Parameters
-ns: symbol or namespace (`clojure.lang.Namespace`)
+`ns`: symbol or namespace (`clojure.lang.Namespace`)
 
 
 == Return value

@@ -3,8 +3,8 @@
 Passes every item in `coll` to `f`, one at a time, and returns a single value.
 
 == Parameters
-`f`: a function with the signature `val, item -> val`
-`val`: (optional) initial value to start the reduce with
+`f`: a function with the signature `val, item -> val`         +
+`val`: (optional) initial value to start the reduce with      +
 `coll`: the collection to reduce
 
 

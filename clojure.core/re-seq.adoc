@@ -4,7 +4,7 @@ Returns a sequence of regex (`re`) all matches in string (`s`).
 TIP: Regex literal syntax looks like `#"regex-goes-here"`
 
 == Parameters
-`re`: regular expression to match
+`re`: regular expression to match              +
 `s`: string to be searched for matches in
 
 == Return value

@@ -3,7 +3,7 @@
 Gets rid of all items in `coll` where `(pred item)` answers false.
 
 == Parameters
-`pred`: a (predicate) function with the signature `obj -> boolean`
+`pred`: a (predicate) function with the signature `obj -> boolean`      +
 `coll`: the collection to filter
 
 

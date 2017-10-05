@@ -6,7 +6,7 @@ evaluated.
 
 
 == Parameters
-`x`: the starting value or form to evaluate
+`x`: the starting value or form to evaluate      +
 `forms`: additional forms to evaluate and insert intermediate values into
 
 

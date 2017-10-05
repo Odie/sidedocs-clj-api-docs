@@ -3,7 +3,7 @@
 Returns the result of applying `f` to each element of `coll` as a lazy sequence.
 
 == Parameters
-`f`: a function that accepts the same number of parameters as the number of given collections
+`f`: a function that accepts the same number of parameters as the number of given collections      +
 `coll`: collection to map over
 
 

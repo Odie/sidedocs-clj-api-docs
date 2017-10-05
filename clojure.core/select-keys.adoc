@@ -2,7 +2,7 @@
 Pick out `map` entries identified by `keyseq` and return it in a separate map
 
 == Parameters
-`map`: the hashmap to pick out entries from
+`map`: the hashmap to pick out entries from      +
 `keyseq`: the keys to pick out. This should be some kind of sequence(LINKME).
 
 

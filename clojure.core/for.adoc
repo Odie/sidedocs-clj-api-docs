@@ -5,7 +5,7 @@ bindings defined by `seq-exprs`.
 
 
 == Parameters
-`seq-exprs`: binding pairs in the shape of `[name sequence]`
+`seq-exprs`: binding pairs in the shape of `[name sequence]`      +
 `body-expr`: the expression to evaluate repeatedly
 
 

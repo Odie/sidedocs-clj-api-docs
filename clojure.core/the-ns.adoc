@@ -1,7 +1,7 @@
 Returns the namespace named by `x`
 
 == Parameters
-x: symbol or namespace (`clojure.lang.Namespace`)
+`x`: symbol or namespace (`clojure.lang.Namespace`)
 
 
 == Return value
